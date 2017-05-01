@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Shopping List</title>
+</head>
+<body>
+<h1>Hello</h1>
+<form>
+    <h2> Add Food </h2>
+    <input type="text" name="food">
+    {% if items %}
+    <ul>
+        {% for item in items %}
+            <input type="text" name="food" hidden value="{{ item }}">
+        {% endfor %}
+    </ul>
+
+{% endif %}
+    <button>Add</button>
+</form>
+
+{% if items %}
+    <ul>
+        {% for item in items %}
+            <li>{{ item  }}</li>
+        {% endfor %}
+    </ul>
+
+{% endif %}
+
+</body>
+</html>
